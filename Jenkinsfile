@@ -23,12 +23,15 @@ pipeline {
             }
         }
 
-        stage('Deploy Heroku') {
+       stage('Deploy Heroku') {
             steps {
-                // Utilisation de doubles quotes "" pour que Groovy interprète la variable
-                // On utilise '_' comme utilisateur, c'est la norme pour les tokens Heroku
-                sh "git push https://_:${HEROKU_TOKEN}@git.heroku.com/nextjs-test-mamoudou.git HEAD:main"
+                withCredentials([string(credentialsId: 'HEROKU_API_KEY', variable: 'HEROKU_TOKEN')]) {
+                sh '''
+                    git push https://heroku:$HEROKU_TOKEN@git.heroku.com/nextjs-test-mamoudou.git HEAD:refs/heads/main --force
+                '''
+                }
             }
         }
+        
     }
 }
