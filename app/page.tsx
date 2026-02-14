@@ -10,7 +10,7 @@ export default function Home() {
       fontSize: "3rem",
       fontWeight: "bold"
     }}>
-      Hello World CI/CD avec Jenkins + Docker + Heroku + update
+      Hello World CI/CD avec Jenkins + Docker + Heroku + update + update 2
     </main>
 
   );
