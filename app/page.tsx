@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main style={{ 
+    <main style={{
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -10,8 +10,8 @@ export default function Home() {
       fontSize: "3rem",
       fontWeight: "bold"
     }}>
-       Hello World CI/CD avec Jenkins + Docker + Heroku 
+      Hello World CI/CD avec Jenkins + Docker + Heroku
     </main>
-  
+
   );
 }
